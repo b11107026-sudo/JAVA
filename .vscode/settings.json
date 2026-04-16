@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "c:\\Users\\林冠豪\\Downloads\\Java_Course_v1142-main\\Java_Course_v1142-main\\FCPS_eUnits_vscode\\SetupFiles\\karel2_c.jar",
+        "c:\\Users\\林冠豪\\Downloads\\Java_Course_v1142-main\\Java_Course_v1142-main\\FCPS_eUnits_vscode\\SetupFiles\\xercesImpl.jar"
+    ],
+    "java.project.sourcePaths": [
+        "Unit1\\src",
+        "Unit2\\src"
+    ]
+}
