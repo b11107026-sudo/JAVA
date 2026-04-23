@@ -1,6 +1,6 @@
 	//Torbert, e-mail: mr@torbert.com, website: www.mr.torbert.com
 	//version 6.17.2003
-
+   package Lab06;
    import edu.fcps.Turtle;
    import javax.swing.*;
    import java.awt.*;
