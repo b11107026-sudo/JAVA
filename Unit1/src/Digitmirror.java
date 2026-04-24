@@ -6,7 +6,7 @@
       private Robot myLED;
       public Digitmirror(int x, int y)
       {
-         myLED = new Robot(x, y, Display.EAST, Display.INFINITY);
+         myLED = new Robot(x, y, Display.WEST, Display.INFINITY);
       }
       public abstract void display();
       private void threeInARow(boolean on)
@@ -32,7 +32,7 @@
       private void threeAndTurn(boolean on)
       {
          threeInARow(on);
-         turnRight();
+         turnLeft();
       }
       private void move()
       {
@@ -84,7 +84,7 @@
          turnLeft();
          turnLeft();
          threeInARow(false);
-         turnLeft();
+         turnRight();
       }
       public void segment6_Off()
       {
@@ -92,7 +92,7 @@
          turnLeft();
          turnLeft();
          threeInARow(false);
-         turnLeft();
+         turnRight();
       }
       public void segment7_On()
       {
