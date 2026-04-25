@@ -1,5 +1,7 @@
 	//Name______________________________ Date_____________
+   package Lab06;
    import edu.fcps.Turtle;
+  
     public class SquareTurtle extends Turtle
    {
       private double mySize;
@@ -33,12 +35,15 @@
       }
        public void drawShape()
       {
-      
-         /************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+         
+         for (int i = 0; i < 4; i++) {
+            forward(mySize);   // 讓烏龜前進一邊長
+            turnLeft(90);      // 左轉90度
+            // 若有 delay 方法可用，這裡加上 delay
+            // 例如: Turtle.delay(100); 或 Thread.sleep(100);
+    
+         }
+        
       
       }
    }

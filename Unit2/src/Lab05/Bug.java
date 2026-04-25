@@ -7,6 +7,7 @@
  *  @version 25 Nov 2002
  *  emphasis changed on 18 Nov 2009 mlbillington@fcps.edu
  **/
+   package Lab05;
    public class Bug
    {
       private int myX;

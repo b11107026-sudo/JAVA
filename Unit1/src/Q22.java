@@ -3,16 +3,27 @@ import edu.fcps.karel2.Display;
 public class Q22 {
     public static void main(String[] args){
         Display.openDefaultWorld();
-        Display.setSize(36,32);
+        Display.setSize(32,32);
         Display.setSpeed(10);
         
-        new E(2, 29).display();
-        new E(10, 29).display();
-        new C(18, 29).display();
-        new S(26, 29).display();
-        new Da(10, 14).display();
-        new Two(18, 14).display();
-        new Six(26, 14).display();
+        // �إߦU�Ӧr��/�Ʀr�������
+        Thread t1 = new Thread(() -> new Emirror(8, 29).displaymirror());
+        Thread t2 = new Thread(() -> new Emirror(16, 29).displaymirror());
+        Thread t3 = new Thread(() -> new Cmirror(23, 29).displaymirror());
+        Thread t4 = new Thread(() -> new Smirror(30, 29).displaymirror());
+        Thread t5 = new Thread(() -> new Damirror(10, 14).displaymirror());
+        Thread t6 = new Thread(() -> new Twomirror(18, 14).displaymirror());
+        Thread t7 = new Thread(() -> new Sixmirror(26, 14).displaymirror());
+        
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
+        t7.start();
+        
+      
     }
     
 }
