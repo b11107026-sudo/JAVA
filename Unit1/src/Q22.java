@@ -7,13 +7,13 @@ public class Q22 {
         Display.setSpeed(10);
         
         // �إߦU�Ӧr��/�Ʀr�������
-        Thread t1 = new Thread(() -> new Emirror(8, 29).displaymirror());
-        Thread t2 = new Thread(() -> new Emirror(16, 29).displaymirror());
-        Thread t3 = new Thread(() -> new Cmirror(23, 29).displaymirror());
-        Thread t4 = new Thread(() -> new Smirror(30, 29).displaymirror());
-        Thread t5 = new Thread(() -> new Damirror(10, 14).displaymirror());
+        Thread t1 = new Thread(() -> new Emirror(30, 29).displaymirror());
+        Thread t2 = new Thread(() -> new Emirror(23, 29).displaymirror());
+        Thread t3 = new Thread(() -> new Cmirror(16, 29).displaymirror());
+        Thread t4 = new Thread(() -> new Smirror(8, 29).displaymirror());
+        Thread t5 = new Thread(() -> new Damirror(26, 14).displaymirror());
         Thread t6 = new Thread(() -> new Twomirror(18, 14).displaymirror());
-        Thread t7 = new Thread(() -> new Sixmirror(26, 14).displaymirror());
+        Thread t7 = new Thread(() -> new Sixmirror(8, 14).displaymirror());
         
         t1.start();
         t2.start();
