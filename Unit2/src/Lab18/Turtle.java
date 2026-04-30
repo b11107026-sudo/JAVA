@@ -31,8 +31,24 @@
       {
          theta+=a;
       }
-       public void forward(double r)
+      public void turnRight(double a)
       {
-         // Your code goes here!
+         theta-=a;
+      }
+      public void setPosition(double x, double y)
+      {
+         this.x = x;
+         this.y = y;
+      }
+      public void forward(double r)
+      {
+         double rad = Math.toRadians(theta);
+         double newX = x + r * Math.cos(rad);
+         double newY = y - r * Math.sin(rad);
+         Graphics g = img.getGraphics();
+         g.setColor(Color.BLUE);
+         g.drawLine((int)x, (int)y, (int)newX, (int)newY);
+         x = newX;
+         y = newY;
       }
    }

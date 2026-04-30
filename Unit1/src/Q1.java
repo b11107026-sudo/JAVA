@@ -45,19 +45,26 @@ public class Q1 {
             while(placer.frontIsClear()) {
                 placer.move();
             }
-            placer.turnAround();
-            
+            if(placer.rightIsClear()){
+                placer.turnRight();
+                while (placer.frontIsClear()) {
+                    placer.move();
+                }
+                placer.turnRight();
+            }else {
+                placer.turnAround();
+            }//done for setting yPosition
             for(int step = 1; step < y; step++) {
                 placer.move();
             }
+            placer.turnRight();
             
-            for(int count = 0; count < numBeepers; count++) {
+            for(int count = 0; count < y; count++) {
                 placer.putBeeper();
-                
-                if(count < numBeepers - 1) {
-                    placer.turnRight();
+                if(count < y - 3) {
                     placer.move();
-                    placer.turnLeft();
+                    placer.putBeeper();
+
                 }
             }
         }

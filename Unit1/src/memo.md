@@ -29,8 +29,19 @@ cd 檔案名稱
 
 git pull 可以把同伴新上傳的檔案下載到本地端
 
+
+git checkout -b branch2 建立分支
+git add . 
+git commit -m "說明"
+git push origin branch2
+
+//語法說明
 git checkout -b 
 checkout 切換分支
 -b 建立並切換至新分支
 branch2 新分支名稱
+
+push 推送
+origin 遠端名稱
+branch2 本地名稱(現在所在的分支)
 

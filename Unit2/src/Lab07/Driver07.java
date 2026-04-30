@@ -1,4 +1,5 @@
 	//Name______________________________ Date_____________
+   package Lab07;
    import edu.fcps.Turtle;
    import java.awt.Color;
    import javax.swing.*;
@@ -16,13 +17,7 @@
          PolygonTurtle smidge = new PolygonTurtle(100.0, 3);
          smidge.setColor(Color.BLUE);
          smidge.setThickness(6);
-         smidge.drawShape();
-      
-         /************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
-      
+         smidge.drawShape(6);
+
       }
    }
