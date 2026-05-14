@@ -1,16 +1,17 @@
-   //Torbert, e-mail: mr@torbert.com, website: www.mr.torbert.com
-	//version 6.17.2003
-   package Lab15;
+
+   package Lab16;
    import javax.swing.JFrame;
-   public class Driver15
+
+import Lab12.PrizePanel;
+   public class Driver16
    {
       public static void main(String[] args)
       { 
-         JFrame frame = new JFrame("Unit2, Lab15: Karel the Robot");
+         JFrame frame = new JFrame("Unit2, Lab16: Prize Panel");
          frame.setSize(400, 400);
          frame.setLocation(175, 50);
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         frame.setContentPane(new KarelPanel());
+         frame.setContentPane(new PrizePanel());
          frame.setVisible(true);
       }
    }

@@ -1,7 +1,10 @@
 	// Phil Ero 15JUL08
-	
+	package Lab14;
    import javax.swing.*;
-   import java.awt.*;
+
+import Lab11.Ball;
+
+import java.awt.*;
    import java.awt.event.*;
    import java.awt.image.*;
    
@@ -19,8 +22,8 @@
    
       private BufferedImage myImage;
       private Graphics myBuffer;
-      private Ball ball;
-      private Polkadot prize;
+      private Lab11.Ball ball;
+      private Lab10.Polkadot prize;
       private Bumper bumper;
       private int hits;
       private Timer timer;    
@@ -31,19 +34,32 @@
          myBuffer = myImage.getGraphics();
          
          // create ball and jump
-      
+         ball = new Ball();
+         ball.setColor(BALL_COLOR);
+         ball.setRadius(BALL_DIAM/2);
+         ball.jump(FRAME, FRAME);
       
          // create prize and jump
+         prize = new Lab10.Polkadot();
+         prize.setColor(PRIZE_COLOR);
+         prize.setRadius(PRIZE_DIAM/2);
+         prize.jump(FRAME, FRAME);
       
-            
          // create bumper and jump
-      
-      	
+         bumper = new Bumper();
+         bumper.setXWidth(BUMPER_X_WIDTH);
+         bumper.setYWidth(BUMPER_Y_WIDTH);
+         bumper.setColor(BUMPER_COLOR);
+         bumper.jump(FRAME, FRAME);
          // ensure ball is outside the bumper
-      
+         while (bumper.inBumper(ball)) {
+            ball.jump(FRAME, FRAME);
+         }
         
       	// ensure prize is outside the bumper
-      
+         while (bumper.inBumper(prize)) {
+            prize.jump(FRAME, FRAME);
+         }
       
          hits = 0;
          timer = new Timer(5, new Listener());
@@ -66,7 +82,7 @@
             
             // check for collisions
             collide(ball, prize);
-            BumperCollision.collide(bumper, ball);
+            Lab14.BumperCollision.collide(bumper, ball);
          
             // draw ball, bumper & prize
             ball.draw(myBuffer);
@@ -88,7 +104,7 @@
       
    	// checks to see if the ball & prize collide
    	// if so, increments hits & relocates prize	
-       public void collide(Ball b, Polkadot p)
+       public void collide(Ball b, Lab10.Polkadot p)
       {
          // find distance between ball & prize centers
          double dist = distance(b.getX(), b.getY(), p.getX(), p.getY());

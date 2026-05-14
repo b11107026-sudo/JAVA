@@ -1,11 +1,11 @@
     // Phil Ero 15JUL08
-    
+    package Lab14;
     public class BumperCollision
    {
       private static double nearestX;	// used to approximate what point of the bumper  
       private static double nearestY;  // a ball collided with
    
-       public static void collide(Bumper bumper, Ball ball)
+       public static void collide(Bumper bumper, Lab11.Ball ball)
       {
          // see if the ball hit the bumper!
          if(bumper.inBumper(ball))
@@ -40,7 +40,7 @@
          }
       }
       
-       private static void findImpactPoint(Bumper bumper, Ball ball)
+       private static void findImpactPoint(Bumper bumper, Lab11.Ball ball)
       {
           // first assume the nw corner is closest
          nearestX = bumper.getX();  
@@ -60,7 +60,7 @@
       }
          
       // makes (x,y) the nearest point if it is closer to the ball
-       private static void updateIfCloser(int x, int y, Ball b)
+       private static void updateIfCloser(int x, int y, Lab11.Ball b)
       {
          if(distance(x, y, b.getX(), b.getY()) < distance(nearestX, nearestY, b.getX(), b.getY()))
          {
