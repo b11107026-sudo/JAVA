@@ -1,5 +1,5 @@
 // Torbert, 7.20.06
-
+   package Lab18;
    import java.awt.*;
    import java.awt.image.*;
 
@@ -45,9 +45,11 @@
          double rad = Math.toRadians(theta);
          double newX = x + r * Math.cos(rad);
          double newY = y - r * Math.sin(rad);
-         Graphics g = img.getGraphics();
-         g.setColor(Color.BLUE);
-         g.drawLine((int)x, (int)y, (int)newX, (int)newY);
+         Graphics2D g2 = (Graphics2D) img.getGraphics();
+         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+         g2.setColor(new Color(200,200,200));
+         g2.setStroke(new BasicStroke(2f));
+         g2.drawLine((int)x, (int)y, (int)newX, (int)newY);
          x = newX;
          y = newY;
       }

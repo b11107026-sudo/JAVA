@@ -1,5 +1,5 @@
    //Name:    Date:
-   package Lab12;
+   package Lab16;
    import javax.swing.*;
    import java.awt.*;
    import java.awt.event.*;
@@ -22,14 +22,11 @@
          myBuffer = myImage.getGraphics();
          myBuffer.setColor(BACKGROUND);
          myBuffer.fillRect(0, 0, FRAME, FRAME);
-         ball = new Lab11.Ball(200, 200, 30, Color.RED);
-         pd = new Lab10.Polkadot(100, 100, 40, Color.BLUE);
+         ball = new Lab11.Ball(50, 50, 30, Color.RED);
+         pd = new Lab10.Polkadot(50, 50, 30, Color.BLUE);
+         addMouseListener(new Mouse());
          t = new Timer(5, new Listener());
          t.start();   
-         addMouseListener(new Mouse());
-         addKeyListener(new Key());
-         setFocusable(true);
-         requestFocusInWindow();
       }
        public void paintComponent(Graphics g)
       {
@@ -49,8 +46,8 @@
             pd.draw(myBuffer);
 
             myBuffer.setColor(Color.BLACK);
-            myBuffer.setFont(new Font("Monospaced", Font.BOLD,25));
-            myBuffer.drawString("Count: " + hits, FRAME-150, 30);
+            myBuffer.setFont(new Font("Monospaced", Font.BOLD,24));
+            myBuffer.drawString("Count: " + hits, FRAME-150, 25);
             repaint();
          }
       }   
@@ -62,8 +59,6 @@
             hits++;
             pd.jump(FRAME, FRAME);
          }
-		
-		  
       }
        private double distance(double x1, double y1, double x2, double y2)
       {
@@ -73,36 +68,17 @@
       {
          public void mousePressed(MouseEvent e)
          {
-            pd.setX(e.getX());
-            pd.setY(e.getY());
-         }
-      }
-      private class Key extends KeyAdapter
-      {
-         public void keyPressed(KeyEvent e)
-         {
-            if(e.getKeyCode() == KeyEvent.VK_UP){
-               pd.setY(pd.getY() - 10);
-               if(pd.getY() < pd.getRadius()){
-                  pd.setY(pd.getRadius());
-               }
-            } else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-               pd.setY(pd.getY() + 10);
-               if(pd.getY() > FRAME - pd.getRadius()){
-                  pd.setY(FRAME - pd.getRadius());
-               }
-            } else if(e.getKeyCode() == KeyEvent.VK_LEFT){
-               pd.setX(pd.getX() - 10);
-               if(pd.getX() < pd.getRadius()){
-                  pd.setX(pd.getRadius());
-               }
-            } else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-               pd.setX(pd.getX() + 10);
-               if(pd.getX() > FRAME - pd.getRadius()){
-                  pd.setX(FRAME - pd.getRadius());
-               }
+            if(e.isMetaDown()){
+                ball.setX(e.getX());
+                ball.setY(e.getY());
+            }else if (e.isShiftDown()){
+                ball.setdx(Math.random()*12-6);
+                ball.setdy(Math.random()*12-6);
+            }else{
+                pd.setX(e.getX());
+                pd.setY(e.getY());
             }
-            repaint();
+            
          }
       }
    }
